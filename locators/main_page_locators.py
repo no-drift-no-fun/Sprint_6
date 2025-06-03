@@ -1,0 +1,26 @@
+from selenium.webdriver.common.by import By
+
+class MainPageLocators:
+
+    UPPER_ORDER_BUTTON:tuple[str, str] = [By.XPATH, '(.//button[@class="Button_Button__ra12g"])']
+    LOWER_ORDER_BUTTON:tuple[str, str] = [By.XPATH, '(.//div[@class="Home_FinishButton__1_cWm"]/child::button)']
+    COMMON_QUESTIONS:tuple[str, str] = [By.XPATH, '(.//div[@class="Home_SubHeader__zwi_E"]/parent::div)']
+    QUESTION_1_BUTTON:tuple[str, str] = [By.XPATH, '(.//div[@aria-controls = "accordion__panel-0"])']
+    QUESTION_1_ANSWER:tuple[str, str] = [By.XPATH, '(.//div[@id = "accordion__panel-0"]/child::p)']
+    QUESTION_2_BUTTON:tuple[str, str] = [By.XPATH, '(.//div[@aria-controls = "accordion__panel-1"])']
+    QUESTION_2_ANSWER:tuple[str, str] = [By.XPATH, '(.//div[@id = "accordion__panel-1"])']
+    QUESTION_3_BUTTON:tuple[str, str] = [By.XPATH, '(.//div[@aria-controls = "accordion__panel-2"])']
+    QUESTION_3_ANSWER:tuple[str, str] = [By.XPATH, '(.//div[@id = "accordion__panel-2"])']
+    QUESTION_4_BUTTON:tuple[str, str] = [By.XPATH, '(.//div[@aria-controls = "accordion__panel-3"])']
+    QUESTION_4_ANSWER:tuple[str, str] = [By.XPATH, '(.//div[@id = "accordion__panel-3"])']
+    QUESTION_5_BUTTON:tuple[str, str] = [By.XPATH, '(.//div[@aria-controls = "accordion__panel-4"])']
+    QUESTION_5_ANSWER:tuple[str, str] = [By.XPATH, '(.//div[@id = "accordion__panel-4"])']
+    QUESTION_6_BUTTON:tuple[str, str] = [By.XPATH, '(.//div[@aria-controls = "accordion__panel-5"])']
+    QUESTION_6_ANSWER:tuple[str, str] = [By.XPATH, '(.//div[@id = "accordion__panel-5"])']
+    QUESTION_7_BUTTON:tuple[str, str] = [By.XPATH, '(.//div[@aria-controls = "accordion__panel-6"])']
+    QUESTION_7_ANSWER:tuple[str, str] = [By.XPATH, '(.//div[@id = "accordion__panel-6"])']
+    QUESTION_8_BUTTON:tuple[str, str] = [By.XPATH, '(.//div[@aria-controls = "accordion__panel-7"])']
+    QUESTION_8_ANSWER:tuple[str, str] = [By.XPATH, '(.//div[@id = "accordion__panel-7"])']
+    HEAD:tuple[str, str] = [By.CLASS_NAME, "Home_Header__iJKdX"]
+    YANDEX_LOGO:tuple[str, str] = [By.XPATH, "//a[@class='Header_LogoYandex__3TSOI']"]
+    SAMOKAT_LOGO:tuple[str, str] = [By.XPATH, "//a[@class='Header_LogoScooter__3lsAR']"]
