@@ -1,28 +1,19 @@
 from selenium.webdriver.common.by import By
 
-class MainPageLocators:
 
-    HEADING = [By.XPATH, '(.//div[@class="Order_Header__BZXOb"])']
-    NAME = [By.XPATH, '(.//input[@placeholder="* Имя"])']
-    SURNAME = [By.XPATH, '(.//input[@placeholder="* Фамилия"])']
-    ADDRESSR = [By.XPATH, '(.//input[@placeholder="* Адрес: куда привезти заказ"])']
-    PHONE_NUMBER = [By.XPATH, '(.//input[@placeholder="* Телефон: на него позвонит курьер"])']
-    METRO = [By.XPATH, ".//input[@placeholder='* Станция метро']/parent::div[@class='select-search__value']"]
-    FIELD_PHONE_LOCATOR = By.XPATH, "//input[@placeholder='* Телефон: на него позвонит курьер']"
-    FIELD_SUBWAY_LOCATOR = By.XPATH, "//input[@placeholder='* Станция метро']"
-    DROPDOWN_STATION_LOCATOR = By.XPATH, ("//input[@placeholder='* Станция метро']"
-    BUTTON_NEXT_LOCATOR = By.XPATH, "//button[text()='Далее']"  # кнопка "Далее"
-    TITLE_ABOUT_RENT_LOCATOR = By.XPATH, "//div[text()='Про аренду']"  # заголовок страницы "Про аренду"
-    FIELD_DATE_LOCATOR = By.XPATH, "//input[@placeholder='* Когда привезти самокат']"  # поле "Когда привезти самокат"
-    DROPDOWN_TODAY_LOCATOR = By.XPATH, "//div[contains(@class, 'react-datepicker__day--today')]"  # сегодняшний день в выпадающем календаре
-    LIST_PERIOD_LOCATOR = By.XPATH, "//div[text()='* Срок аренды']"  # выпадающий список "Срок аренды"
-    CHECK_DAY_PERIOD_LOCATOR = By.XPATH, "//*[@class='Dropdown-option' and contains(text(), 'сутки')]"  # элемент "Сутки" выпадающего списка "Срок аренды"
-    CHECK_TWO_DAYS_PERIOD_LOCATOR = By.XPATH, "//*[@class='Dropdown-option' and contains(text(), 'двое суток')]"  # элемент "двое сутки" выпадающего списка "Срок аренды"
-    CHECK_COLOR_BLACK_LOCATOR = By.XPATH, "//label[@for='black']"  # чекбокс "Черный жемчуг"
-    CHECK_COLOR_GREY_LOCATOR = By.XPATH, "//label[@for='grey']"  # чекбокс "Серая безысходность"
-    FIELD_COMMENT_LOCATOR = By.XPATH, "//input[@placeholder='Комментарий для курьера']"  # поле "Комментарий для курьера"
-    BUTTON_ORDER_LOCATOR = By.XPATH, "//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']"  # кнопка "Заказать"
-    POPUP_CONFIRM_LOCATOR = By.XPATH, "//div[@class='Order_ModalHeader__3FDaJ']"  # всплывающее окно "Хотите оформить заказ?"
-    POPUP_BUTTON_YES_LOCATOR = By.XPATH, "//button[text()='Да']"  # кнопка "Да" в всплывающем окне "Хотите оформить заказ?"
-    POPUP_ORDER_COMPLETE_LOCATOR = By.XPATH, "//div[text()='Заказ оформлен']"  # надпись в попапе "Заказ оформлен"
-    BUTTON_CHECK_STATUS = By.XPATH, "//button[text()='Посмотреть статус']"  # кнопка "Посмотреть статус" в попапе "Заказ оформлен"
+class OrderPageLocators:
+    name_field = (By.CSS_SELECTOR, "[placeholder = '* Имя']")
+    surname_field = (By.CSS_SELECTOR, "[placeholder = '* Фамилия']")
+    address_field = (By.CSS_SELECTOR, "[placeholder = '* Адрес: куда привезти заказ']")
+    metro_field = (By.CSS_SELECTOR, "[placeholder = '* Станция метро']")
+    phone_field = (By.CSS_SELECTOR, "[placeholder = '* Телефон: на него позвонит курьер']")
+    next_button = (By.XPATH, ".//button[text()='Далее']")
+    date_when_to_bring_a_scooter_field = (By.CSS_SELECTOR, "[placeholder = '* Когда привезти самокат']")
+    rental_period_dropdown_menu = (By.XPATH, ".//div[@class='Dropdown-placeholder']")
+    one_day_in_rental_period_menu = (By.XPATH, ".//div[@class='Dropdown-option' and text()='сутки']")
+    checkbox_select_black_color_of_the_scooter = (By.XPATH, ".//input[@id='grey']")
+    checkbox_select_grey_color_of_the_scooter = (By.XPATH, ".//input[@id='grey']")
+    comment_field = (By.CSS_SELECTOR, "[placeholder = 'Комментарий для курьера']")
+    order_button_for_complete_the_order = (By.XPATH, ".//button[contains(@class, 'Button_Middle') and text()='Заказать']")
+    order_button_for_yes_the_order = (By.XPATH, ".//button[contains(@class, 'Button_Middle') and text()='Да']")
+    modal_of_successful_order = (By.XPATH, ".//div[contains(@class, 'Order_ModalHeader')]")
