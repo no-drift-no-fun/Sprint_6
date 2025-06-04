@@ -1,24 +1,28 @@
 import allure
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions
-from locators.order_page_locators import OrderPageLocators
+from locators.base_page_locators import BasePageLocators
+from pages.base_page import BasePage
 
-class MainPage:
+class MainPage(BasePage):
 
-    @allure.step('Находим элемент {locator}')
-    def find_element_with_wait(self, locator, driver):
-        element = WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(locator))
-        return element
+    @allure.step('Клик по кнопке "Заказать" в хедере')
+    def click_top_order_button(self):
+        self.find_element_with_wait(BasePageLocators.order_button)
+        self.click_to_element(BasePageLocators.order_button)
 
-    @allure.step('Кликаем по элементу {locator}')
-    def click_to_element(self, locator, driver):
-        self.find_element_with_wait(locator, driver).click()
+    @allure.step('Клик по кнопке "Заказать" внизу')
+    def scroll_to_how_it_works_and_click_order(self):
+        self.scroll_to_element(BasePageLocators.second_order_button)
+        self.click_to_element(BasePageLocators.second_order_button)
 
-    @allure.step('Скролим до элемента {locator}')
-    def scroll_to_element(self, locator, driver):
-        element = self.find_element_with_wait(locator, driver)
-        driver.execute_script("arguments[0].scrollIntoView();", element)
+    @allure.step('Скролл до блока FAQ и клик на вопрос')
+    def click_question(self, locator):
+        self.scroll_to_element(locator)
+        self.click_to_element(locator)
 
-    @allure.step('Получаем текст элемента {locator}')
-    def get_text_from_element(self, locator, driver):
-        return self.find_element_with_wait(locator, driver).text
+    @allure.step('Клик по лого "Самоката"')
+    def click_scooter_logo(self):
+        self.click_to_element(BasePageLocators.scooter_logo)
+
+    @allure.step('Клик по лого "Яндекс"')
+    def click_yandex_logo(self):
+        self.click_to_element(BasePageLocators.yandex_logo)

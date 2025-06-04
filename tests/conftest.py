@@ -3,7 +3,7 @@ from selenium import webdriver
 from links import *
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture
 def driver_start():
     driver = webdriver.Firefox()
     driver.set_window_size(1024, 768)

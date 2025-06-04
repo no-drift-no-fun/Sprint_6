@@ -4,7 +4,7 @@ from pages.main_page import MainPage
 from locators.main_page_locators import MainPageLocators
 
 
-class TestQuestions(MainPage):
+class TestQuestions:
 
     @pytest.mark.parametrize("dict_questions", [
         ({
@@ -58,10 +58,10 @@ class TestQuestions(MainPage):
 
     ])
 
-    def test_click_for_all_question(self, dict_questions, driver_start):
+    def test_click_for_all_question(self,driver_start, dict_questions):
         allure.dynamic.title(dict_questions["allure"])
         allure.dynamic.description("Проверка отображения ответа на вопрос")
-        self.scroll_to_element(dict_questions["main_locator"], driver_start)
-        self.click_to_element(dict_questions["main_locator"], driver_start)
-        assert dict_questions["questions_text"] in self.get_text_from_element(dict_questions["answer_text_locator"],
-                                                                              driver_start)
+        page = MainPage(driver_start)
+        page.click_question(dict_questions["main_locator"])
+        page.get_text_from_element(dict_questions["main_locator"])
+        assert dict_questions["questions_text"] in page.get_text_from_element(dict_questions["answer_text_locator"])
