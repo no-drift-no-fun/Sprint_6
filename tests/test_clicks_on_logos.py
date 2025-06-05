@@ -13,7 +13,7 @@ class TestClicksOnLogos:
     def test_click_scooter_logo(self, driver_start):
         page = MainPage(driver_start)
         page.click_scooter_logo()
-        assert BASE_URL == driver_start.current_url
+        assert BASE_URL == page.get_current_url()
 
     @allure.title("Нажатие на логотип яндекса")
     @allure.description("Проверка перехода на yandex dzen при клике на логотип yandex")
@@ -23,4 +23,4 @@ class TestClicksOnLogos:
         page.click_yandex_logo()
         page.switch_to_new_tab()
         page.wait_text_contains("Дзен")
-        assert "dzen.ru/" in driver_start.current_url
+        assert "dzen.ru/" in page.get_current_url()
